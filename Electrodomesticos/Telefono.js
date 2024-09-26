@@ -20,4 +20,12 @@ class Telefono extends ProductoElectronico {
         return tamanoPantalla >= 0 ? tamanoPantalla : 27;
     }
 
+    get tamanoPantalla() {
+        return this.tamanoPantalla;
+    }
+
+    set tamanoPantalla(nuevoTamanoPantalla) {
+        this.tamanoPantalla = nuevoTamanoPantalla;
+    }
+
 }

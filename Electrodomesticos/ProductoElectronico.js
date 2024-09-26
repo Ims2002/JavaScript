@@ -30,4 +30,40 @@ class ProductoElectronico {
     validarAnyo(anyo) {
         return (anyo >= 1900 && anyo <= 2025) ? anyo : 2024; 
     }
+
+    get marca() {
+        return this._marca;
+    }
+
+    set marca(nuevaMarca) {
+        this._marca = nuevaMarca;
+    }
+
+    get modelo() {
+        return this._modelo;
+    }
+
+    set modelo(nuevoModelo) {
+        this._modelo = nuevoModelo;
+    }
+
+
+    get precio() {
+        return this._precio;
+    }
+
+    set precio(nuevoPrecio) {
+        //Revalidamos el nuevo valor
+        this._precio = this.validarPrecio(nuevoPrecio);
+    }
+
+    get anyoLanzamiento() {
+        return this._anyoLanzamiento;
+    }
+
+    set anyoLanzamiento(nuevoAnyo) {
+        //Revalidamos el nuevo valor
+        this._anyoLanzamiento = this.validarAnyo(nuevoAnyo);
+    }
+
 }
