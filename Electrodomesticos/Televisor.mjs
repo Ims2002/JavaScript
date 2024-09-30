@@ -1,12 +1,16 @@
-class Televisor extends ProductoElectronico {
+import { ProductoElectronico } from './ProductoElectronico.mjs';
+
+
+export class Televisor extends ProductoElectronico {
 
     constructor(marca,modelo,precio,anyoLanzamiento,resolucion) {
         super(marca,modelo,precio,anyoLanzamiento);
-        this.resolucion = resolucion;
+        this._resolucion = resolucion;
     }
 
     detalles() {
-        return '${super.detalles()}, Resolución de la pantalla: ${this.resolucion} píxeles';
+        return `${super.detalles()}, 
+        Resolución de la pantalla: ${this.resolucion} píxeles`;
     }
 
     calcularDescuento() {
@@ -18,11 +22,11 @@ class Televisor extends ProductoElectronico {
     }
 
     get resolucion() {
-        return this.resolucion;
+        return this._resolucion;
     }
 
     set resolucion(nuevaResolucion) {
-        this.resolucion = nuevaResolucion;
+        this._resolucion = nuevaResolucion;
     }
 
 }

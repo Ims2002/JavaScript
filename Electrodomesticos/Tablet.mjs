@@ -1,12 +1,16 @@
-class Tablet extends ProductoElectronico {
+import { ProductoElectronico } from './ProductoElectronico.mjs';
+
+
+export class Tablet extends ProductoElectronico {
 
     constructor(marca,modelo,precio,anyoLanzamiento,almacenamiento) {
         super(marca,modelo,precio,anyoLanzamiento);
-        this.almacenamiento = this.validarAlmacenamiento(almacenamiento);
+        this._almacenamiento = this.validarAlmacenamiento(almacenamiento);
     }
 
     detalles() {
-        return '${super.detalles()}, Cantidad de almacenamiento: ${this.almacenamiento} GB';
+        return `${super.detalles()}, 
+        Cantidad de almacenamiento: ${this.almacenamiento} GB`;
     }
 
     calcularDescuento() {
@@ -22,11 +26,11 @@ class Tablet extends ProductoElectronico {
     }
 
     get almacenamiento() {
-        return this.almacenamiento;
+        return this._almacenamiento;
     }
 
     set almacenamiento(nuevoAlmacenamiento) {
-        this.almacenamiento = nuevoAlmacenamiento;
+        this._almacenamiento = this.validarAlmacenamiento(nuevoAlmacenamiento);
     }
 
 }

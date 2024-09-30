@@ -1,4 +1,4 @@
-class ProductoElectronico {
+export class ProductoElectronico {
     constructor(marca, modelo, precio, anyoLanzamiento) {
         this.marca = marca;
         this.modelo = modelo;
@@ -6,7 +6,7 @@ class ProductoElectronico {
         this.anyoLanzamiento = this.validarAnyo(anyoLanzamiento);
     }
 
-    // Métodos
+ 
     detalles() {
         return `Marca: ${this.marca}, 
         Modelo: ${this.modelo}, 
@@ -65,5 +65,7 @@ class ProductoElectronico {
         //Revalidamos el nuevo valor
         this._anyoLanzamiento = this.validarAnyo(nuevoAnyo);
     }
+
+    
 
 }

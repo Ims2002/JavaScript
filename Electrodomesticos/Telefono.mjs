@@ -1,11 +1,15 @@
-class Telefono extends ProductoElectronico {
+import { ProductoElectronico } from './ProductoElectronico.mjs';
+
+
+export class Telefono extends ProductoElectronico {
     constructor(marca,modelo,precio,anyoLanzamiento,tamanoPantalla) {
         super(marca,modelo,precio,anyoLanzamiento);
-        this.tamanoPantalla =  this.validarTamanoPantalla(tamanoPantalla);
+        this._tamanoPantalla = this.validarTamanoPantalla(tamanoPantalla);
     }
 
     detalles() {
-        return '${super.detalles()}, Tamaño de la pantalla: ${this.tamañopantalla} pulgadas';
+        return `${super.detalles()}, 
+        Tamaño de la pantalla: ${this.tamañopantalla} pulgadas`;
     }
 
     calcularDescuento() {
@@ -21,11 +25,11 @@ class Telefono extends ProductoElectronico {
     }
 
     get tamanoPantalla() {
-        return this.tamanoPantalla;
+        return this._tamanoPantalla;
     }
 
     set tamanoPantalla(nuevoTamanoPantalla) {
-        this.tamanoPantalla = nuevoTamanoPantalla;
+        this._tamanoPantalla = this.validarTamanoPantalla(nuevoTamanoPantalla);
     }
 
 }
