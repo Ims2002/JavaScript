@@ -10,7 +10,8 @@ export class Tablet extends ProductoElectronico {
 
     detalles() {
         return `${super.detalles()}, 
-        Cantidad de almacenamiento: ${this.almacenamiento} GB`;
+        Cantidad de almacenamiento: ${this.almacenamiento} GB,
+        Precio con descuento: ${this.precio - this.calcularDescuento()}$`;
     }
 
     calcularDescuento() {

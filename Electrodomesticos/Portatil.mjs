@@ -10,7 +10,8 @@ export class Portatil extends ProductoElectronico {
 
     detalles() {
         return `${super.detalles()}, 
-        Tamaño de la memoria RAM: ${this.ram} GB`;
+        Tamaño de la memoria RAM: ${this.ram} GB,
+        Precio con descuento: ${this.precio - this.calcularDescuento()}$`;
     }
 
     calcularDescuento() {

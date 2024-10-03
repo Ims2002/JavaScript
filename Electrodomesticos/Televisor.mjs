@@ -10,7 +10,8 @@ export class Televisor extends ProductoElectronico {
 
     detalles() {
         return `${super.detalles()}, 
-        Resolución de la pantalla: ${this.resolucion} píxeles`;
+        Resolución de la pantalla: ${this.resolucion} píxeles,
+        Precio con descuento: ${this.precio - this.calcularDescuento()}$`;
     }
 
     calcularDescuento() {

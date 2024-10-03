@@ -9,7 +9,8 @@ export class Telefono extends ProductoElectronico {
 
     detalles() {
         return `${super.detalles()}, 
-        Tamaño de la pantalla: ${this.tamañopantalla} pulgadas`;
+        Tamaño de la pantalla: ${this.tamañopantalla} pulgadas,
+        Precio con descuento: ${this.precio - this.calcularDescuento()}$`;
     }
 
     calcularDescuento() {
