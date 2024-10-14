@@ -1,8 +1,8 @@
 "use strict";
 
 // Devuelve el número de letras (ignora espacios y símbolos)
-function letras(cadena) {
-    let soloLetras = cadena.replace(/[^a-zA-Z]/g, "");
+function letras(cadena) { 
+    let soloLetras = cadena.replace(/[^a-zA-Z]/g, " ");
     return soloLetras.length;
 }
 
