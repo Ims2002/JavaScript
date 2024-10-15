@@ -59,3 +59,5 @@ function palindromo(cadena) {
 function limpiar(cadena) {
     return cadena.replace(/[^a-zA-Z\s]/g, "");
 }
+
+// Me llamo pedro
