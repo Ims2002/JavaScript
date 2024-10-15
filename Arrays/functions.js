@@ -1,7 +1,8 @@
 "use strict";
 
-// Devuelve el número de letras (ignora espacios y símbolos)
+// Devuelve el número de letras
 function letras(cadena) { 
+    // .replace ignora espacios y símbolos
     let soloLetras = cadena.replace(/[^a-zA-Z]/g, " ");
     return soloLetras.length;
 }
@@ -19,6 +20,9 @@ function maysc(cadena) {
 
 // Devuelve la cadena con la primera letra de cada palabra en mayúscula
 function titulo(cadena) {
+    // \w: coincide con el primer carácter de palabra (letras, números, guiones bajos)
+    // \S*: coincide con cero o más caracteres que no son espacios
+    // g: modificador global, busca todas las coincidencias
     return cadena.replace(/\w\S*/g, function(palabra) {
         return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
     });
@@ -31,17 +35,27 @@ function letrasReves(cadena) {
 
 // Devuelve la cadena con las palabras al revés
 function palabrasReves(cadena) {
+    // Dividimos la cadena cada vez que encontramos un espacio
+    // damos la vuelta al array y hacemos que cada elemento del 
+    // array se separe por un espacio en blanco.
     return cadena.split(" ").reverse().join(" ");
 }
 
-// Comprueba si la cadena es un palíndromo (sin tener en cuenta espacios ni mayúsculas/minúsculas)
+// Comprueba si la cadena es un palíndromo
+// No es case sensitive
 function palindromo(cadena) {
+    //Eliminamos caracteres no deseados
     let limpio = cadena.replace(/[^a-zA-Z]/g, "").toLowerCase();
+
+    // Volteamos la cadena
     let reves = limpio.split("").reverse().join("");
+    
+    // Comprobamos si son iguales 
     return limpio === reves;
+
 }
 
-// (Optativa) Elimina números y símbolos de la cadena, dejando solo caracteres alfabéticos
+// Elimina números y símbolos de la cadena, dejando solo caracteres alfabéticos
 function limpiar(cadena) {
     return cadena.replace(/[^a-zA-Z\s]/g, "");
 }
