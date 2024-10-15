@@ -10,6 +10,7 @@ window.onload = function() {
 
     // Llamamos a las funciones de functions.js y 
     // mostramos los resultados por consola
+    
     console.log("Número de letras:", letras(frase));
     console.log("Número de palabras:", palabras(frase));
     console.log("Frase en mayúsculas:", maysc(frase));
