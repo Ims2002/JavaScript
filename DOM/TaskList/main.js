@@ -138,6 +138,7 @@ function cambiarTareaPos() {
 
     // Mostramos el array generado por swap, la 
     // funcion que cambia las posiciones de los datos
+    // en el array especificado, en este caso "tareas"
     mostrarTareas(swap(posicionOrigen-1,posicionDestino-1,tareas));
 
 }
